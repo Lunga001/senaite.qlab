@@ -1,0 +1,21 @@
+<configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+        i18n_domain="senaite.photoimporter">
+
+    <genericsetup:registerProfile
+            name="default"
+            title="SENAITE ADD-ON"
+            directory="profiles/default"
+            description='Extension profile to Senaite Core'
+            provides="Products.GenericSetup.interfaces.EXTENSION"/>
+
+    <genericsetup:registerProfile
+            name="uninstall"
+            title="senaite.photoimporter uninstall profile"
+            directory="profiles/uninstall"
+            description="Uninstalls the senaite.photoimporter add-on"
+            provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+
+</configure>
