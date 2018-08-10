@@ -1,11 +1,11 @@
 <div align="center">
 
-  <a href="https://github.com/senaite/senaite.addons">
-    <img src="static/logo.png" alt="senaite.addons" height="64" />
+  <a href="https://github.com/senaite/senaite.qlab">
+    <img src="static/logo.png" alt="senaite.qlab" height="64" />
   </a>
-  <h1>SENAITE ADD-ON</h1>
+  <h1>SENAITE QUANTUM LAB</h1>
 
-  <p>The ADD-ON provides a unified interface to the SENAITE CORE for developers.</p>
+  <p>The QUANTUM-LAB provides a unified interface to the SENAITE CORE for developers.</p>
 
 
   <div>

@@ -6,10 +6,10 @@ version = '1.0.0'
 
 
 setup(
-    name='senaite.addon',
+    name='senaite.qlab',
     version=version,
     description="SENAITE ADD-ON",
-    #long_description=open("docs/About.rst").read() +
+    # long_description=open("docs/About.rst").read() +
     #                 "\n\n" +
     #                 open("senaite/photoimpoter/docs/API.rst").read() +
     #                 "\n\n" +
@@ -26,7 +26,7 @@ setup(
     keywords='',
     author='SENAITE Foundation',
     author_email='hello@senaite.com',
-    url='https://github.com/senaite/senaite.addons',
+    url='https://github.com/senaite/senaite.qlab',
     license='GPLv2',
     packages=find_packages(exclude=['ez_setup']),
     namespace_packages=['senaite'],
