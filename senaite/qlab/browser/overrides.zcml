@@ -1,0 +1,16 @@
+<configure
+        xmlns="http://namespaces.zope.org/zope"
+        xmlns:browser="http://namespaces.zope.org/browser"
+        i18n_domain="als.lims">
+
+    <!--
+    <browser:page
+      for="bika.lims.interfaces.IAnalysisRequest"
+      name="publish"
+      class="als.lims.browser.analysisrequest.publish.AnalysisRequestPublishView"
+      permission="bika.lims.ManageAnalysisRequests"
+      layer="bika.lims.interfaces.IBikaLIMS"
+    />
+    -->
+
+</configure>
