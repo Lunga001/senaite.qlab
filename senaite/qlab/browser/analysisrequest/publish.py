@@ -131,7 +131,6 @@ class AnalysisRequestPublishView(ARPV):
 
     def publishFromHTML(self, aruid, results_html):
         # The AR can be published only and only if allowed
-        import pdb; pdb.set_trace()
         uc = getToolByName(self.context, 'uid_catalog')
         ars = uc(UID=aruid)
         if not ars or len(ars) != 1:
