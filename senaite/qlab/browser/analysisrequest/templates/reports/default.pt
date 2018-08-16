@@ -212,13 +212,19 @@
     <h1 i18n:translate="">Results</h1>
     <tal:poc tal:repeat="poc python:categanalyses.keys()">
       <h2 tal:content="poc"></h2>
+      <tal:interim_title tal:define="global interim_title string:NoInterims"/>
       <tal:cat tal:repeat="cat python:view.sorted_by_sort_key(categanalyses.get(poc,{}).keys())">
+          <tal:analyses tal:repeat="analysis python:categanalyses[poc][cat]">
+            <tal:interims tal:condition="python:len(analysis['interims']) > 0">
+                <tal:interim_title tal:define="global interim_title python:analysis['interims'][0]['title']"/>
+            </tal:interims>
+          </tal:analyses>
         <table>
           <thead>
             <tr>
               <th class="analysis"><span tal:content="string:${cat}">Category</span></th>
               <th tal:condition="hasprevresults" class="previous"><span i18n:translate="">Previous Results</span></th>
-              <th class="result"><span i18n:translate="">Interims</span></th>
+              <th class="result" tal:condition="python:interim_title !='NoInterims'"><span i18n:translate="" tal:content="interim_title">Interims</span></th>
               <th class="result"><span i18n:translate="">Result</span></th>
               <th class="specs"><span i18n:translate="">Value Range</span></th>
               <th class="outofrange"></th>
@@ -253,12 +259,16 @@
                   <td tal:condition="hasprevresults" class="prev">
                     <span tal:content="structure analysis/previous_results">1,2,3</span>
                   </td>
-                  <td>
-                    <span tal:repeat="interim python:analysis['interims']">
-                        <span tal:content="interim/title"></span>
-                        <span tal:content="structure interim/formatted_value"/><span tal:content="structure interim/unit|nothing"/><br />
-                    </span>
-                    <span tal:condition="python:len(analysis['interims']) == 0">-</span>
+                  <td tal:condition="python:len(analysis['interims']) > 0">
+                    <tal:interim tal:repeat="interim python:analysis['interims']">
+                        <tal:interim_title tal:condition="python:interim['title'] == interim_title">
+                            <span tal:content="structure interim/formatted_value"/>
+                            <span tal:content="structure interim/unit|nothing"/>
+                        </tal:interim_title>
+                    </tal:interim>
+                  </td>
+                  <td tal:condition="python:len(analysis['interims']) == 0 and interim_title !='NoInterims'">
+                    <span>-</span>
                   </td>
                   <td>
                     <span class="result" tal:content="structure analysis/formatted_result">23</span>
