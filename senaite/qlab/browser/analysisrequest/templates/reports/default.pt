@@ -222,12 +222,12 @@
         <table>
           <thead>
             <tr>
-              <th class="analysis"><span tal:content="string:${cat}">Category</span></th>
-              <th tal:condition="hasprevresults" class="previous"><span i18n:translate="">Previous Results</span></th>
-              <th class="result" tal:condition="python:interim_title !='NoInterims'"><span i18n:translate="" tal:content="interim_title">Interims</span></th>
-              <th class="result"><span i18n:translate="">Result</span></th>
-              <th class="specs"><span i18n:translate="">Value Range</span></th>
-              <th class="outofrange"></th>
+              <th class="analysis"><span tal:content="string:${cat}" nowrap>Category</span></th>
+              <th tal:condition="hasprevresults" class="previous" nowrap><span i18n:translate="">Previous Results</span></th>
+              <th class="result" tal:condition="python:interim_title !='NoInterims'" nowrap><span i18n:translate="" tal:content="interim_title">Interims</span></th>
+              <th class="result" nowrap><span i18n:translate="">Result</span></th>
+              <th class="specs" nowrap><span i18n:translate="">Value Range</span></th>
+              <th class="outofrange" nowrap></th>
             </tr>
           </thead>
           <tfoot>
