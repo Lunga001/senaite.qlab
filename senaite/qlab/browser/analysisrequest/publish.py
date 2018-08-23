@@ -160,7 +160,8 @@ class AnalysisRequestPublishView(ARPV):
         if debug_mode:
             logger.debug("Writing PDF for %s to %s" % (ar.Title(), pdf_fn))
         else:
-            os.remove(pdf_fn)
+            if os.path.exists(pdf_fn):
+                os.remove(pdf_fn)
 
         recipients = []
         contact = ar.getContact()
